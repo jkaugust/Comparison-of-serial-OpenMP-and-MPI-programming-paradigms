@@ -1,0 +1,1 @@
+# Comparison-of-serial-OpenMP-and-MPI-programming-paradigms
