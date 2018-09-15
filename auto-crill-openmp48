@@ -1,0 +1,150 @@
+#!/bin/bash -l
+#SBATCH -d 1 -N 1                # you'll never need more than 1 node for the serial code
+#SBATCH -d 1 -t 00:20:00         # adjust the amount of time as necessary
+#SBATCH -d 1 -J auto-openmp32
+#SBATCH -d 1 -o auto-openmp32.%j.stdout
+#SBATCH -d 1 -e auto-openmp32.%j.error
+
+rm openmp.txt
+./serial -n 500 -no -s openmp.txt
+export OMP_NUM_THREADS=1
+./openmp -p 1 -n 500 -no -s openmp.txt
+export OMP_NUM_THREADS=2
+./openmp -p 2 -n 500 -no -s openmp.txt
+export OMP_NUM_THREADS=4
+./openmp -p 4 -n 500 -no -s openmp.txt
+export OMP_NUM_THREADS=6
+./openmp -p 6 -n 500 -no -s openmp.txt
+export OMP_NUM_THREADS=12
+./openmp -p 12 -n 500 -no -s openmp.txt
+export OMP_NUM_THREADS=18
+./openmp -p 18 -n 500 -no -s openmp.txt
+export OMP_NUM_THREADS=24
+./openmp -p 24 -n 500 -no -s openmp.txt
+export OMP_NUM_THREADS=32
+./openmp -p 32 -n 500 -no -s openmp.txt
+
+export OMP_NUM_THREADS=1
+./openmp -p 1 -n 1000 -no -s openmp.txt
+export OMP_NUM_THREADS=2
+./openmp -p 2 -n 1000 -no -s openmp.txt
+export OMP_NUM_THREADS=4
+./openmp -p 4 -n 1000 -no -s openmp.txt
+export OMP_NUM_THREADS=6
+./openmp -p 6 -n 1000 -no -s openmp.txt
+export OMP_NUM_THREADS=12
+./openmp -p 12 -n 1000 -no -s openmp.txt
+export OMP_NUM_THREADS=18
+./openmp -p 18 -n 1000 -no -s openmp.txt
+export OMP_NUM_THREADS=24
+./openmp -p 24 -n 1000 -no -s openmp.txt
+export OMP_NUM_THREADS=32
+./openmp -p 32 -n 1000 -no -s openmp.txt
+
+export OMP_NUM_THREADS=1
+./openmp -p 1 -n 2000 -no -s openmp.txt
+export OMP_NUM_THREADS=2
+./openmp -p 2 -n 2000 -no -s openmp.txt
+export OMP_NUM_THREADS=4
+./openmp -p 4 -n 2000 -no -s openmp.txt
+export OMP_NUM_THREADS=6
+./openmp -p 6 -n 2000 -no -s openmp.txt
+export OMP_NUM_THREADS=12
+./openmp -p 12 -n 2000 -no -s openmp.txt
+export OMP_NUM_THREADS=18
+./openmp -p 18 -n 2000 -no -s openmp.txt
+export OMP_NUM_THREADS=24
+./openmp -p 24 -n 2000 -no -s openmp.txt
+export OMP_NUM_THREADS=32
+./openmp -p 32 -n 2000 -no -s openmp.txt
+
+export OMP_NUM_THREADS=1
+./openmp -p 1 -n 5000 -no -s openmp.txt
+export OMP_NUM_THREADS=2
+./openmp -p 2 -n 5000 -no -s openmp.txt
+export OMP_NUM_THREADS=4
+./openmp -p 4 -n 5000 -no -s openmp.txt
+export OMP_NUM_THREADS=6
+./openmp -p 6 -n 5000 -no -s openmp.txt
+export OMP_NUM_THREADS=12
+./openmp -p 12 -n 5000 -no -s openmp.txt
+export OMP_NUM_THREADS=18
+./openmp -p 18 -n 5000 -no -s openmp.txt
+export OMP_NUM_THREADS=24
+./openmp -p 24 -n 5000 -no -s openmp.txt
+export OMP_NUM_THREADS=32
+./openmp -p 32 -n 5000 -no -s openmp.txt
+
+export OMP_NUM_THREADS=1
+./openmp -p 1 -n 10000 -no -s openmp.txt
+export OMP_NUM_THREADS=2
+./openmp -p 2 -n 10000 -no -s openmp.txt
+export OMP_NUM_THREADS=4
+./openmp -p 4 -n 10000 -no -s openmp.txt
+export OMP_NUM_THREADS=6
+./openmp -p 6 -n 10000 -no -s openmp.txt
+export OMP_NUM_THREADS=12
+./openmp -p 12 -n 10000 -no -s openmp.txt
+export OMP_NUM_THREADS=18
+./openmp -p 18 -n 10000 -no -s openmp.txt
+export OMP_NUM_THREADS=24
+./openmp -p 24 -n 10000 -no -s openmp.txt
+export OMP_NUM_THREADS=32
+./openmp -p 32 -n 10000 -no -s openmp.txt
+
+export OMP_NUM_THREADS=1
+./openmp -p 1 -n 20000 -no -s openmp.txt
+export OMP_NUM_THREADS=2
+./openmp -p 2 -n 20000 -no -s openmp.txt
+export OMP_NUM_THREADS=4
+./openmp -p 4 -n 20000 -no -s openmp.txt
+export OMP_NUM_THREADS=6
+./openmp -p 6 -n 20000 -no -s openmp.txt
+export OMP_NUM_THREADS=12
+./openmp -p 12 -n 20000 -no -s openmp.txt
+export OMP_NUM_THREADS=18
+./openmp -p 18 -n 20000 -no -s openmp.txt
+export OMP_NUM_THREADS=24
+./openmp -p 24 -n 20000 -no -s openmp.txt
+export OMP_NUM_THREADS=32
+./openmp -p 32 -n 20000 -no -s openmp.txt
+
+export OMP_NUM_THREADS=1
+./openmp -p 1 -n 50000 -no -s openmp.txt
+export OMP_NUM_THREADS=2
+./openmp -p 2 -n 50000 -no -s openmp.txt
+export OMP_NUM_THREADS=4
+./openmp -p 4 -n 50000 -no -s openmp.txt
+export OMP_NUM_THREADS=6
+./openmp -p 6 -n 50000 -no -s openmp.txt
+export OMP_NUM_THREADS=12
+./openmp -p 12 -n 50000 -no -s openmp.txt
+export OMP_NUM_THREADS=18
+./openmp -p 18 -n 50000 -no -s openmp.txt
+export OMP_NUM_THREADS=24
+./openmp -p 24 -n 50000 -no -s openmp.txt
+export OMP_NUM_THREADS=32
+./openmp -p 32 -n 50000 -no -s openmp.txt
+
+export OMP_NUM_THREADS=1
+./openmp -p 1 -n 100000 -no -s openmp.txt
+export OMP_NUM_THREADS=2
+./openmp -p 2 -n 100000 -no -s openmp.txt
+export OMP_NUM_THREADS=4
+./openmp -p 4 -n 100000 -no -s openmp.txt
+export OMP_NUM_THREADS=6
+./openmp -p 6 -n 100000 -no -s openmp.txt
+export OMP_NUM_THREADS=12
+./openmp -p 12 -n 100000 -no -s openmp.txt
+export OMP_NUM_THREADS=18
+./openmp -p 18 -n 100000 -no -s openmp.txt
+export OMP_NUM_THREADS=24
+./openmp -p 24 -n 100000 -no -s openmp.txt
+export OMP_NUM_THREADS=32
+./openmp -p 32 -n 100000 -no -s openmp.txt
+
+export OMP_NUM_THREADS=24
+./openmp -p 24 -n 12000 -no -s openmp.txt
+export OMP_NUM_THREADS=32
+./openmp -p 32 -n 16000 -no -s openmp.txt
+./autograder -v openmp -s openmp.txt

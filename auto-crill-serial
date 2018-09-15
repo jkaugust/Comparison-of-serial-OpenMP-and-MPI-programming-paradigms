@@ -1,0 +1,14 @@
+#!/bin/bash -l
+#SBATCH -N 1              # you'll never need more than 1 node for the serial code
+#SBATCH -t 00:20:00       # adjust the amount of time as necessary
+#SBATCH -J auto-serial
+#SBATCH -o auto-serial.%j.stdout
+#SBATCH -e auto-serial.%j.error
+
+rm serial.txt
+
+ ./serial -n 500000 -no -s serial.txt
+ ./serial -n 700000 -no -s serial.txt
+ ./serial -n 900000 -no -s serial.txt
+ ./serial -n 1000000 -no -s serial.txt
+./autograder -v serial -s serial.txt
